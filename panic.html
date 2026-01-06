@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora - SOS</title>
+    <style>
+        body { background: #1a0a2e; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; overflow: hidden; }
+        .logo-btn { width: 220px; height: 220px; cursor: pointer; border-radius: 60px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 30px rgba(188, 19, 254, 0.4); }
+        .logo-btn:active { transform: scale(0.9); box-shadow: 0 0 60px #bc13fe; }
+        .status { margin-top: 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #bc13fe; }
+        .pulse { position: absolute; width: 220px; height: 220px; border-radius: 60px; border: 2px solid #bc13fe; animation: pulse-out 1.5s infinite; z-index: -1; }
+        @keyframes pulse-out { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+    </style>
+</head>
+<body>
+    <div class="pulse"></div>
+    <img src="aurora-512.png" class="logo-btn" id="panicBtn" alt="Botão SOS Aurora">
+    <div class="status" id="statusTxt">Pronto para Proteção</div>
+
+    <audio id="sireneAudio" src="sirene.mp3" loop></audio>
+
+    <script>
+        const btn = document.getElementById('panicBtn');
+        const audio = document.getElementById('sireneAudio');
+        const status = document.getElementById('statusTxt');
+
+        btn.addEventListener('click', () => {
+            status.innerText = "🚨 ALERTA ATIVADO!";
+            status.style.color = "#ff4d4d";
+            audio.play(); // Toca a sirene enviada
+            
+            navigator.geolocation.getCurrentPosition((pos) => {
+                const lat = pos.coords.latitude;
+                const lon = pos.coords.longitude;
+                console.log(`Localização enviada: ${lat}, ${lon}`);
+                // Aqui o sistema enviaria os dados para o servidor
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aurora - Confiança</title>
+    <style>
+        body { background: #0f051a; color: #eee; font-family: 'Segoe UI', sans-serif; padding: 20px; }
+        .card { background: rgba(255,255,255,0.05); border: 1px solid #bc13fe; border-radius: 15px; padding: 20px; margin-bottom: 20px; }
+        .alert-active { border-color: #ff4d4d; animation: blink 1s infinite; }
+        @keyframes blink { 0% { box-shadow: 0 0 5px #ff4d4d; } 50% { box-shadow: 0 0 20px #ff4d4d; } 100% { box-shadow: 0 0 5px #ff4d4d; } }
+        .map-btn { background: #bc13fe; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Monitoramento Aurora</h2>
+    <div id="alertasContainer">
+        <div class="card alert-active">
+            <h3>🚨 EMERGÊNCIA DETECTADA</h3>
+            <p><strong>Usuária:</strong> Ana Silva</p>
+            <p><strong>Horário:</strong> Agora</p>
+            <a href="https://www.google.com/maps?q=-16.123, -48.123" target="_blank" class="map-btn">Ver Localização Exata</a>
+        </div>
+    </div>
+</body>
+</html>

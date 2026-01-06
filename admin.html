@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aurora Admin</title>
+    <style>
+        body { font-family: sans-serif; display: flex; margin: 0; background: #f4f4f9; }
+        nav { width: 250px; background: #1a0a2e; height: 100vh; color: white; padding: 20px; }
+        main { flex-grow: 1; padding: 30px; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #bc13fe; color: white; }
+        .badge { padding: 5px 10px; border-radius: 20px; font-size: 12px; }
+        .status-danger { background: #ffe6e6; color: #ff4d4d; }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="aurora-192.png" width="50" style="border-radius: 10px;" alt="Logo Aurora">
+        <h3>Painel Admin</h3>
+        <p>Dashboard</p>
+        <p>Usuárias</p>
+        <p>Relatórios</p>
+    </nav>
+    <main>
+        <h2>Ocorrências em Tempo Real</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data/Hora</th>
+                    <th>Usuária</th>
+                    <th>Localização</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>06/01/2026 14:30</td>
+                    <td>Ana Silva</td>
+                    <td>Valparaíso de Goiás</td>
+                    <td><span class="badge status-danger">Ativo</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
